@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String url = "jdbc:mysql://localhost:3306/Hotel";
+        String url = "jdbc:mysql://localhost:3306/dbhotel";
         String usuario = "SysHotel";
         String senha = "SysHotel00";
 
