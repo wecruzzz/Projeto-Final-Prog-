@@ -2,36 +2,47 @@ import DAO.ClienteDAO;
 import DAO.ClienteDAOimpl;
 import Model.Cliente;
 import java.util.List;
+import Actions.ClienteActions;
 
 void main() {
+    ClienteActions actions = new ClienteActions();
+int opcao = 1;
+Scanner scanner = new Scanner(System.in);
 
-    Cliente cliente = new Cliente();
+    System.out.println("\n===== MENU CLIENTE =====");
+    System.out.println("1 - Inserir cliente");
+    System.out.println("2 - Listar clientes");
+    System.out.println("3 - Atualizar cliente");
+    System.out.println("4 - Excluir cliente");
+    System.out.println("0 - Sair");
+    System.out.print("Escolha uma opção: ");
 
-    cliente.setCodigo(1);
-    cliente.setNome("Welington");
-    cliente.setTelefone("47991075280");
-    cliente.setCPF("12958624927");
-    cliente.setEndereco("Rua Fernando");
-    cliente.setPasaporte("123");
-    cliente.setRG("888");
-    cliente.setEmail("welingtondacruz6@gmail.com");
-    cliente.setData_nascimento("2006-08-31");
-    cliente.setPais("Brasil");
+while(opcao != 0) {
 
-    // ClienteDAO dao = new ClienteDAOimpl();
-    // dao.inserir(cliente);
 
-    ClienteDAO dao = new ClienteDAOimpl();
+        opcao = scanner.nextInt();
 
-    List<Cliente> clientes = dao.listar();
+        switch (opcao) {
+            case 1:
+                actions.inserirCliente();
+                break;
 
-    for (Cliente clienteLista : clientes) {
+            case 2:
+                actions.ListarCliente();
+                break;
 
-        System.out.println("Código: " + clienteLista.getCodigo());
-        System.out.println("Nome: " + clienteLista.getNome());
-        System.out.println("Telefone: " + clienteLista.getTelefone());
-        System.out.println("CPF: " + clienteLista.getCPF());
-        System.out.println("Email: " + clienteLista.getEmail());
-        System.out.println("-------------------------");
+            case 3:
+                actions.atualizarCliente();
+                break;
+            case 4:
+                actions.removerCliente();
+                break;
+        }
+
+
+
+
     }
-}
+
+
+    }

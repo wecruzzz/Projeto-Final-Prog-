@@ -3,7 +3,7 @@ package Util;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-
+//realiza a conexao com o BD
 public class Conexao {
 
     private static final String URL = "jdbc:mysql://localhost:3306/dbhotel";
