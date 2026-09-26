@@ -1,27 +1,37 @@
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import DAO.ClienteDAO;
+import DAO.ClienteDAOimpl;
+import Model.Cliente;
+import java.util.List;
 
-public class Main {
+void main() {
 
-    public static void main(String[] args) {
+    Cliente cliente = new Cliente();
 
-        String url = "jdbc:mysql://localhost:3306/dbhotel";
-        String usuario = "SysHotel";
-        String senha = "SysHotel00";
+    cliente.setCodigo(1);
+    cliente.setNome("Welington");
+    cliente.setTelefone("47991075280");
+    cliente.setCPF("12958624927");
+    cliente.setEndereco("Rua Fernando");
+    cliente.setPasaporte("123");
+    cliente.setRG("888");
+    cliente.setEmail("welingtondacruz6@gmail.com");
+    cliente.setData_nascimento("2006-08-31");
+    cliente.setPais("Brasil");
 
-        try {
-            Connection conexao = DriverManager.getConnection(url, usuario, senha);
+    // ClienteDAO dao = new ClienteDAOimpl();
+    // dao.inserir(cliente);
 
-            System.out.println("Conexão realizada com sucesso!");
+    ClienteDAO dao = new ClienteDAOimpl();
 
-            conexao.close();
+    List<Cliente> clientes = dao.listar();
 
-            System.out.println("Conexão encerrada!");
+    for (Cliente clienteLista : clientes) {
 
-        } catch (SQLException e) {
-            System.out.println("Erro ao conectar com o banco:");
-            e.printStackTrace();
-        }
+        System.out.println("Código: " + clienteLista.getCodigo());
+        System.out.println("Nome: " + clienteLista.getNome());
+        System.out.println("Telefone: " + clienteLista.getTelefone());
+        System.out.println("CPF: " + clienteLista.getCPF());
+        System.out.println("Email: " + clienteLista.getEmail());
+        System.out.println("-------------------------");
     }
 }
