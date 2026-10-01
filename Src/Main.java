@@ -14,6 +14,7 @@ Scanner scanner = new Scanner(System.in);
     System.out.println("2 - Listar clientes");
     System.out.println("3 - Atualizar cliente");
     System.out.println("4 - Excluir cliente");
+    System.out.println("5 - Buscar cliente");
     System.out.println("0 - Sair");
     System.out.print("Escolha uma opção: ");
 
@@ -37,6 +38,9 @@ while(opcao != 0) {
             case 4:
                 actions.removerCliente();
                 break;
+
+            case 5:
+                actions.buscarCliente();
         }
 
 

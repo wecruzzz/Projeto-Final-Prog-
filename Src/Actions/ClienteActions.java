@@ -119,4 +119,27 @@ public class ClienteActions {
         clienteDAO.excluir(cliente.getCodigo());
 
     }
+    //Buscar cliente
+    public Cliente buscarCliente(){
+        ClienteDAOimpl clienteDAO = new ClienteDAOimpl();
+        System.out.println("Codigo:");
+        int codigo = scanner.nextInt();
+        scanner.nextLine();
+        Cliente cliente = clienteDAO.buscar(codigo);
+        if (cliente != null) {
+            System.out.println("Código: " + cliente.getCodigo());
+            System.out.println("Nome: " + cliente.getNome());
+            System.out.println("Telefone: " + cliente.getTelefone());
+            System.out.println("CPF: " + cliente.getCPF());
+            System.out.println("Email: " + cliente.getEmail());
+            System.out.println("Data de nascimento: " + cliente.getData_nascimento());
+            System.out.println("RG: " + cliente.getRG());
+            System.out.println("passaporte: " + cliente.getPasaporte());
+            System.out.println("Endereço: " + cliente.getEndereco());
+            System.out.println("Pais: " + cliente.getPais());
+        }
+        return cliente;
+    }
+
+
 }

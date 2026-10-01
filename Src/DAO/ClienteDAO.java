@@ -13,6 +13,8 @@ public interface ClienteDAO {
 
     void excluir(int codigo);
 
+    Cliente buscar (int codigo);
+
 
 
 

@@ -149,4 +149,35 @@ public class ClienteDAOimpl implements ClienteDAO {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public Cliente buscar(int codigo) {
+        String sql = "SELECT * FROM TBCliente WHERE Codigo = ?";
+
+        try{
+            Connection conexao = Conexao.conectar();
+
+            PreparedStatement stmt = conexao.prepareStatement(sql);
+            stmt.setInt(1, codigo);
+            ResultSet resultado = stmt.executeQuery();
+            if (resultado.next()) {
+                Cliente cliente = new Cliente();
+                cliente.setCodigo(resultado.getInt("Codigo"));
+                cliente.setNome(resultado.getString("Nome"));
+                cliente.setTelefone(resultado.getString("Telefone"));
+                cliente.setCPF(resultado.getString("CPF"));
+                cliente.setEndereco(resultado.getString("Endereco"));
+                cliente.setPasaporte(resultado.getString("Passaporte"));
+                cliente.setRG(resultado.getString("RG"));
+                cliente.setEmail(resultado.getString("Email"));
+                cliente.setData_nascimento(resultado.getString("data_nascimento"));
+                cliente.setPais(resultado.getString("pais"));
+                return cliente;
+            }
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
