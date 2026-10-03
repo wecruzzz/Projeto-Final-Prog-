@@ -1,52 +1,42 @@
-import DAO.ClienteDAO;
-import DAO.ClienteDAOimpl;
-import Model.Cliente;
-import java.util.List;
-import Actions.ClienteActions;
+import Actions.LoginActions;
+import Menus.MenuAdministrador;
+import Menus.MenuAtendente;
+import Model.Funcionario;
 
 void main() {
-    ClienteActions actions = new ClienteActions();
-int opcao = 1;
-Scanner scanner = new Scanner(System.in);
 
-    System.out.println("\n===== MENU CLIENTE =====");
-    System.out.println("1 - Inserir cliente");
-    System.out.println("2 - Listar clientes");
-    System.out.println("3 - Atualizar cliente");
-    System.out.println("4 - Excluir cliente");
-    System.out.println("5 - Buscar cliente");
-    System.out.println("0 - Sair");
-    System.out.print("Escolha uma opção: ");
+    LoginActions loginActions = new LoginActions();
 
-while(opcao != 0) {
+    Funcionario funcionario = null;
 
+    System.out.println("================================");
+    System.out.println("       SISTEMA DO HOTEL");
+    System.out.println("================================");
 
-        opcao = scanner.nextInt();
+    while (funcionario == null) {
 
-        switch (opcao) {
-            case 1:
-                actions.inserirCliente();
-                break;
-
-            case 2:
-                actions.ListarCliente();
-                break;
-
-            case 3:
-                actions.atualizarCliente();
-                break;
-            case 4:
-                actions.removerCliente();
-                break;
-
-            case 5:
-                actions.buscarCliente();
-        }
-
-
-
-
+        funcionario = loginActions.fazerLogin();
     }
 
+    if (funcionario.getCargo().equalsIgnoreCase("Administrador")) {
 
+        MenuAdministrador menuAdministrador =
+                new MenuAdministrador();
+
+        menuAdministrador.abrirMenu();
+
+    } else if (funcionario.getCargo().equalsIgnoreCase("Atendente")) {
+
+        MenuAtendente menuAtendente =
+                new MenuAtendente();
+
+        menuAtendente.abrirMenu();
+
+    } else {
+
+        System.out.println(
+                "Cargo não possui acesso ao sistema.");
     }
+
+    System.out.println("\nSistema encerrado.");
+}
