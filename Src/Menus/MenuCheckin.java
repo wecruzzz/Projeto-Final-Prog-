@@ -1,4 +1,7 @@
 package Menus;
+
+import Actions.ChekinActions;
+
 import java.util.Scanner;
 
 public class MenuCheckin {
@@ -6,6 +9,8 @@ public class MenuCheckin {
     private Scanner scanner = new Scanner(System.in);
 
     public void abrirMenu() {
+
+        ChekinActions chekinActions = new ChekinActions();
 
         int opcao = -1;
 
@@ -28,26 +33,27 @@ public class MenuCheckin {
             switch (opcao) {
 
                 case 1:
-                    System.out.println("Função de check-in ainda não implementada.");
+                    chekinActions.inserirChekin();
                     break;
 
                 case 2:
-                    System.out.println("Função de listagem ainda não implementada.");
+                    chekinActions.listarChekin();
                     break;
 
                 case 3:
-                    System.out.println("Função de busca ainda não implementada.");
+                    chekinActions.buscarChekin();
                     break;
 
                 case 4:
-                    System.out.println("Função de atualização ainda não implementada.");
+                    chekinActions.alterarChekin();
                     break;
 
                 case 5:
-                    System.out.println("Função de cancelamento ainda não implementada.");
+                    chekinActions.removerChekin();
                     break;
 
                 case 0:
+                    System.out.println("Voltando...");
                     break;
 
                 default:

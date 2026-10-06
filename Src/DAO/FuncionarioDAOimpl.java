@@ -187,7 +187,7 @@ public class FuncionarioDAOimpl implements FuncionarioDAO {
     @Override
     public Funcionario login(String email, String senha) {
 
-        String sql = "SELECT * FROM fucionario WHERE Email = ? AND Senha = ?";
+        String sql = "SELECT * FROM tbfuncionario WHERE Email = ? AND Senha = ?";
 
         try {
             Connection conexao = Conexao.conectar();

@@ -4,7 +4,6 @@ import Actions.MenuFuncionario;
 import Actions.MenuHotel;
 import Actions.MenuQuartos;
 import Menus.MenuCheckin;
-import Menus.MenuHistorico;
 import java.util.Scanner;
 
 public class MenuAdministrador {
@@ -16,7 +15,6 @@ public class MenuAdministrador {
         MenuCliente menuCliente = new MenuCliente();
         MenuQuartos menuQuartos = new MenuQuartos();
         MenuCheckin menuCheckin = new MenuCheckin();
-        MenuHistorico menuHistorico = new MenuHistorico();
         MenuHotel menuHotel = new MenuHotel();
         MenuFuncionario menuFuncionario = new MenuFuncionario();
 
@@ -31,9 +29,8 @@ public class MenuAdministrador {
             System.out.println("1 - Clientes");
             System.out.println("2 - Quartos");
             System.out.println("3 - Check-in");
-            System.out.println("4 - Histórico");
-            System.out.println("5 - Hotéis");
-            System.out.println("6 - Funcionários");
+            System.out.println("4 - Hotéis");
+            System.out.println("5 - Funcionários");
             System.out.println("0 - Sair");
 
             System.out.print("Escolha uma opção: ");
@@ -53,15 +50,12 @@ public class MenuAdministrador {
                     menuCheckin.abrirMenu();
                     break;
 
-                case 4:
-                    menuHistorico.abrirMenu();
-                    break;
 
-                case 5:
+                case 4:
                     menuHotel.abrirMenu();
                     break;
 
-                case 6:
+                case 5:
                     menuFuncionario.abrirMenu();
                     break;
 

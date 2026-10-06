@@ -3,7 +3,7 @@ package Menus;
 import Actions.MenuCliente;
 import Actions.MenuQuartos;
 import Menus.MenuCheckin;
-import Menus.MenuHistorico;
+
 
 import java.util.Scanner;
 
@@ -16,7 +16,6 @@ public class MenuAtendente {
         MenuCliente menuCliente = new MenuCliente();
         MenuQuartos menuQuartos = new MenuQuartos();
         MenuCheckin menuCheckin = new MenuCheckin();
-        MenuHistorico menuHistorico = new MenuHistorico();
 
         int opcao = -1;
 
@@ -29,7 +28,6 @@ public class MenuAtendente {
             System.out.println("1 - Clientes");
             System.out.println("2 - Quartos");
             System.out.println("3 - Check-in");
-            System.out.println("4 - Histórico");
             System.out.println("0 - Sair");
 
             System.out.print("Escolha uma opção: ");
@@ -49,9 +47,6 @@ public class MenuAtendente {
                     menuCheckin.abrirMenu();
                     break;
 
-                case 4:
-                    menuHistorico.abrirMenu();
-                    break;
 
                 case 0:
                     System.out.println("Saindo do sistema...");
