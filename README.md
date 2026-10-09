@@ -325,6 +325,5 @@ Também é importante conferir diretamente no MySQL se os registros foram inseri
 - Objetivo acadêmico
 
 O projeto permite aplicar conceitos de programação orientada a objetos, organização em camadas, interfaces, implementação de DAO, consultas SQL, JDBC, integridade referencial e operações CRUD.
--
 
 **Projeto desenvolvido para fins acadêmicos.**
