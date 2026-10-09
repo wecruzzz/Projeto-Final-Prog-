@@ -10,10 +10,10 @@ O sistema utiliza uma organização em camadas, separando os modelos de dados, o
 
 - Tecnologias utilizadas
 
-**Java** — desenvolvimento da aplicação.
-**MySQL** — banco de dados relacional.
-**JDBC** — conexão e execução de comandos SQL.
-**PreparedStatement** — execução de consultas parametrizadas.
+**Java** - desenvolvimento da aplicação.
+**MySQL** - banco de dados relacional.
+**JDBC** - conexão e execução de comandos SQL.
+**PreparedStatement** - execução de consultas parametrizadas.
 **IDE:** Visual Studio Code ou outra IDE compatível com Java.
 
 - Organização do projeto
