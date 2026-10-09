@@ -17,8 +17,8 @@ public class ClienteDAOimpl implements ClienteDAO {
     public void inserir(Cliente cliente) {
 
         String sql = "INSERT INTO tbCliente " +
-                "(Codigo, Nome, Telefone, CPF, Endereco, Passaporte, RG, Email, data_nascimento, pais) " +
-                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                "( Nome, Telefone, CPF, Endereco, Passaporte, RG, Email, data_nascimento, pais) " +
+                "VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try {
 
@@ -26,16 +26,15 @@ public class ClienteDAOimpl implements ClienteDAO {
 
             PreparedStatement stmt = conexao.prepareStatement(sql);
 
-            stmt.setInt(1, cliente.getCodigo());
-            stmt.setString(2, cliente.getNome());
-            stmt.setString(3, cliente.getTelefone());
-            stmt.setString(4, cliente.getCPF());
-            stmt.setString(5, cliente.getEndereco());
-            stmt.setString(6, cliente.getPasaporte());
-            stmt.setString(7, cliente.getRG());
-            stmt.setString(8, cliente.getEmail());
-            stmt.setString(9, cliente.getData_nascimento());
-            stmt.setString(10, cliente.getPais());
+            stmt.setString(1, cliente.getNome());
+            stmt.setString(2, cliente.getTelefone());
+            stmt.setString(3, cliente.getCPF());
+            stmt.setString(4, cliente.getEndereco());
+            stmt.setString(5, cliente.getPasaporte());
+            stmt.setString(6, cliente.getRG());
+            stmt.setString(7, cliente.getEmail());
+            stmt.setString(8, cliente.getData_nascimento());
+            stmt.setString(9, cliente.getPais());
 
             stmt.executeUpdate();
 

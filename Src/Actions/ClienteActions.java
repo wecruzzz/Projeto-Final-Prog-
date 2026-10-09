@@ -45,10 +45,6 @@ public class ClienteActions {
 
         Cliente cliente = new Cliente();
 
-        System.out.print("Código: ");
-        cliente.setCodigo(scanner.nextInt());
-        scanner.nextLine();
-
         System.out.print("Nome: ");
         cliente.setNome(scanner.nextLine());
 
